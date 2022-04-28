@@ -11,6 +11,22 @@ function User(fname,lname,email,password,gender,phone,age,address,paymentmethod,
     this.paymentMethod = paymentmethod;
     this.favoriteColor = favoritecolor;
 }
+function isValid(user){
+    //return false when the user is not valid
+    //return true when the user is valid
+    let valid=true;
+    $("input").removeClass("input-error");
+    if(user.email.length==0){
+        valid=false;
+        console.error("Add an email");
+        $("#txtEmail").addClass("input-error");
+    }
+    if(user.password==0){
+        valid=false;
+        console.error("Add a password");
+    }
+    return valid;
+}
 
 function register(){
     let inputfName = $("#txtFirstName").val();
@@ -23,8 +39,11 @@ function register(){
     let inputAddress = $("#txtAddress").val();
     let inputPaymentMethod = $("#txtPaymentMethod").val();
     let inputFavortieColor = $("txtColor").val();
-
+    //if()
     let newUser = new User(inputfName,inputlName,inputEmail,inputPassword,inputAddress,inputPaymentMethod,inputFavortieColor);
+    if(isValid(newUser)){
+        saveUser(newUser);
+    }
 }
 
 

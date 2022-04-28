@@ -3,3 +3,26 @@ header.site-header{
     color: brown;
     height: 30vh;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu a{
+    color: white;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.input-error{
+    border: 1px solid red;
+}
